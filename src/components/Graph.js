@@ -29,11 +29,12 @@ class Graph extends React.Component{
 
 	fit(){
 		// if there is no data: reset the model; else: train the model
-		if(this.props.x.length==0 && this.props.x.length==0)  
+		if(this.props.x.length==0 && this.props.y.length==0)
 			this.model = new PolynomialRegression();
 		else
 			this.model.train(this.props.x,this.props.y,this.props.deg);
 	}
+				
 	
 	plot_update(){
 		let data = new Array(),
@@ -48,7 +49,7 @@ class Graph extends React.Component{
 		}
 		this.chart.data.datasets[0].data = data;
 		this.chart.data.datasets[0].label = `Polynomial Degree: ${String(this.props.deg)}`;
-		this.chart.data.datasets[0].pointBackgroundColor.push("rgba(0,0,0,1)");
+		this.chart.data.datasets[0].pointBackgroundColor.push(this.props.color);
 		this.chart.data.datasets[1] =  {
 			type:'line',
 			label: this.model.expression,
@@ -66,10 +67,8 @@ class Graph extends React.Component{
 			type:'scatter',
 			data:{
 				datasets:[{
-					type:"line",
 					label:`Polynomial Degree: ${String(this.props.deg)}`,
 					data:new Array(),
-					borderColor: this.props.color,
 					fill: false, 
 					pointBackgroundColor:new Array()
 				}]
