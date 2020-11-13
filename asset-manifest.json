@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/polynomial-regression-js/static/js/main.36d0cf64.chunk.js",
+    "main.js.map": "/polynomial-regression-js/static/js/main.36d0cf64.chunk.js.map",
+    "runtime-main.js": "/polynomial-regression-js/static/js/runtime-main.ebfc8890.js",
+    "runtime-main.js.map": "/polynomial-regression-js/static/js/runtime-main.ebfc8890.js.map",
+    "static/js/2.28b13d98.chunk.js": "/polynomial-regression-js/static/js/2.28b13d98.chunk.js",
+    "static/js/2.28b13d98.chunk.js.map": "/polynomial-regression-js/static/js/2.28b13d98.chunk.js.map",
+    "static/js/3.92682686.chunk.js": "/polynomial-regression-js/static/js/3.92682686.chunk.js",
+    "static/js/3.92682686.chunk.js.map": "/polynomial-regression-js/static/js/3.92682686.chunk.js.map",
+    "index.html": "/polynomial-regression-js/index.html",
+    "static/js/2.28b13d98.chunk.js.LICENSE.txt": "/polynomial-regression-js/static/js/2.28b13d98.chunk.js.LICENSE.txt",
+    "static/media/grid.fa990d41.png": "/polynomial-regression-js/static/media/grid.fa990d41.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ebfc8890.js",
+    "static/js/2.28b13d98.chunk.js",
+    "static/js/main.36d0cf64.chunk.js"
+  ]
+}
