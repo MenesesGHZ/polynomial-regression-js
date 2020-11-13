@@ -3,6 +3,14 @@ import {render} from "react-dom";
 import PolynomialRegression from "../polynomial_regression/PolynomialRegression";
 const Chart = require('chart.js');
 
+/*-----------------------------------------------------
+ *
+ *	This component plot the selected coordinates, and it draws the polynomial model. 
+ *	This two main functionalities are done whenever the user adds new points or resets the graph.
+ *	
+ * ----------------------------------------------------
+ */
+
 class Graph extends React.Component{
 	constructor(props){
 		super(props);
@@ -17,7 +25,6 @@ class Graph extends React.Component{
 	componentDidUpdate() {
 		this.fit()
 		this.plot_update();
-		console.log(this.model.expression)
 	}
 
 	fit(){

@@ -3,8 +3,17 @@ import {render} from "react-dom";
 import Graph from "./Graph";
 import Drawer from "./Drawer";
 import RegressionSetup from "./RegressionSetup";
-import * as math from "mathjs";
 
+/*-----------------------------------------------------
+ *
+ *	This component is in charge to update the state of the `x_array` and `y_array`
+ *	receving the coordinates from the <Drawer/> component.
+ *	Also it handles the `order` of each polynomial model that it is received from the <RegressionSetup/>
+ *	component.
+ *
+ * ----------------------------------------------------
+ */
+ 
 class Main extends React.Component{
 	constructor(props){
 		super(props);
@@ -14,9 +23,8 @@ class Main extends React.Component{
 			order_graph_1:1,
 			order_graph_2:2,
 		};
-		const m1 = math.matrix([2,2,2]);
-		const m2 = math.matrix([1,2,3]);
-		console.log(math.multiply(m1,m2))
+		this.color_graph_1 = "rgb(255,0,0)";
+		this.color_graph_2 = "rgb(0,255,0)";
 	}
 
 	addCoord(coord){
@@ -39,7 +47,6 @@ class Main extends React.Component{
 		});
 	}
 
-
 	render(){
 		return(
 			<div className="container-fluid pt-4">
@@ -49,8 +56,8 @@ class Main extends React.Component{
 						<RegressionSetup order_graph_1={this.state.order_graph_1} order_graph_2={this.state.order_graph_2} setOrders={this.setOrders.bind(this)} /> 	
 					</div>
 					<div className="col-12 col-sm-12 col-md-12 col-lg-8">
-						<Graph x={this.state.x_array} y={this.state.y_array} deg={this.state.order_graph_1} width={800} color={"rgb(255,0,0)"} />
-						<Graph x={this.state.x_array} y={this.state.y_array} deg={this.state.order_graph_2} width={800} color={"rgb(0,255,0)"} />
+						<Graph x={this.state.x_array} y={this.state.y_array} deg={this.state.order_graph_1} width={800} color={this.color_graph_1} />
+						<Graph x={this.state.x_array} y={this.state.y_array} deg={this.state.order_graph_2} width={800} color={this.color_graph_2} />
 					</div>
 				</div>
 			</div>
