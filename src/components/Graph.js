@@ -15,8 +15,17 @@ class Graph extends React.Component{
 	}
 
 	componentDidUpdate() {
-		if(this.props.x.length!=0 && this.props.x.length!=0) this.model.train(this.props.x,this.props.y,this.props.deg);
+		this.fit()
 		this.plot_update();
+		console.log(this.model.expression)
+	}
+
+	fit(){
+		// if there is no data: reset the model; else: train the model
+		if(this.props.x.length==0 && this.props.x.length==0)  
+			this.model = new PolynomialRegression();
+		else
+			this.model.train(this.props.x,this.props.y,this.props.deg);
 	}
 	
 	plot_update(){

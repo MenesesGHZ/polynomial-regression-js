@@ -11,8 +11,8 @@ class Drawer extends React.Component{
 	}
 
 	onMouseMove(e){
-	 	this.setState({ x: (e.nativeEvent.offsetX/this.width).toFixed(3),
-				y: (1-e.nativeEvent.offsetY/this.height).toFixed(3)},
+	 	this.setState({ x: parseFloat((e.nativeEvent.offsetX/this.width).toFixed(3)),
+				y: parseFloat(((this.height-e.nativeEvent.offsetY)/this.height).toFixed(3))},
 			()=>{if(this.state.hoverMode) this.addCoord()}
 		);	
 	}
@@ -27,12 +27,10 @@ class Drawer extends React.Component{
 		this.props.addCoord(coord); 
 	}
 
-		
-
 	render(){
 		return(
 			<div>
-				<div className="row mb-4">
+				<div className="row mb-4 justify-content-center align-items-center">
 					<div className="col-6">
 						<p>Hover Mode: [{this.state.hoverMode?"ON":"OFF"}]</p>
 						<button type="button" className="btn btn-success" onClick={this.toggleHoverMode.bind(this)}>toggle</button>

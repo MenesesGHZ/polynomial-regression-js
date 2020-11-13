@@ -3,6 +3,7 @@ import {render} from "react-dom";
 import Graph from "./Graph";
 import Drawer from "./Drawer";
 import RegressionSetup from "./RegressionSetup";
+import * as math from "mathjs";
 
 class Main extends React.Component{
 	constructor(props){
@@ -13,6 +14,9 @@ class Main extends React.Component{
 			order_graph_1:1,
 			order_graph_2:2,
 		};
+		const m1 = math.matrix([2,2,2]);
+		const m2 = math.matrix([1,2,3]);
+		console.log(math.multiply(m1,m2))
 	}
 
 	addCoord(coord){
