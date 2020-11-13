@@ -37,7 +37,7 @@ class PolynomialRegression{
 				s_xiy.push(math.multiply(x_pow_deg[i],y));
 			}
 
-			//computing remaining sums for solving the `m+1` linear equations, where `m` is equal to the number of coeficients; m=this.degree
+			//computing remaining sums for solving the `m+1` linear equations, where `m+1` is equal to the number of coeficients; m=this.degree
 			for(let i=this.degree+1; i<=2*this.degree;i++) 
 				x_pow_deg.push(X.map(el=>el**i)); 
 
